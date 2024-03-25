@@ -1,0 +1,43 @@
+<div class="container">
+  <h1>Contact</h1>
+
+  <%= form_with(url: "#", method: "get", id: "contact-form") do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, "Name" %>
+      <%= form.text_field :name, class: "form-control", required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :email, "Email" %>
+      <%= form.email_field :email, class: "form-control", required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :message, "Message" %>
+      <%= form.text_area :message, class: "form-control", required: true %>
+    </div>
+
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+  <div class="alert alert-success" id="success-alert" style="display: none;">
+    Thank you for your message, we will contact you soon.
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    /**
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      //event.preventDefault();
+
+      alert("Thank you for your message, we will contact you soon.");
+    });
+    **/
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      //event.preventDefault(); 
+
+      document.getElementById('success-alert').style.display = 'block';
+    });
+  });
+</script>

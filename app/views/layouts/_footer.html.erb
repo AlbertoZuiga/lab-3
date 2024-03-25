@@ -1,0 +1,27 @@
+<footer class="text-center text-lg-start mt-auto bg-black" id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h4 class="text-white">Contact</h4>
+        <p class="text-white">Email: <%= link_to "azuiga@miuandes.cl", "mailto:azuiga@miuandes.cl" %></p>
+        <a href="https://wa.me/56964962736" target="_blank">WhatsApp</a>
+      </div>
+      <div class="col-md-8">
+        <h4 class="text-white">Copyright</h4>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    var bodyHeight = document.body.offsetHeight;
+    var windowHeight = window.innerHeight;
+
+    if (bodyHeight < windowHeight) {
+      var footer = document.getElementById('footer');
+      footer.classList.add('fixed-bottom');
+    }
+  });
+</script>
